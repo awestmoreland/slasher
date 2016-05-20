@@ -27,6 +27,7 @@ e.g. `Last I heard, Andy was going to lunch, but that was 45 minutes ago.`
 `/sup` with no parameter returns status for all team members
 
 #### To Do:
+- When retrieving all team updates, order by most recent
 - Remove unnecessary "*and*" from response when status was updated less than 1 minute ago
 
 
