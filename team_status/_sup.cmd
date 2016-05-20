@@ -28,7 +28,7 @@ if($command == "/sup") {
       $time_since_last_update = time_elapsed($now-$last_update);
 
       // create response
-      $response = "Last I heard, @$team_member was $last_status, but that was $time_since_last_update ago.";
+      $response = "Last I heard, @$team_member was `$last_status`, but that was $time_since_last_update ago.";
 
     }
     else {
