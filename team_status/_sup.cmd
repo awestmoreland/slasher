@@ -38,7 +38,7 @@ if($command == "/sup") {
 
     }
 
-    respond($response_url, $response, true);
+    respond($response_url, $response);
 
   }
   else {
