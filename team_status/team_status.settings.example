@@ -1,0 +1,6 @@
+<?php
+
+  // File containing json array of statuses
+  $status_file = './path/to/file';
+
+?>

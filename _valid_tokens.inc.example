@@ -1,0 +1,9 @@
+<?php
+
+  // tokens come from the Slack slash command integrations settings
+  $valid_tokens  = array(
+    'qwertyuiop',  // iam
+    'asdfghjklz',  // sup
+  );
+
+?>
