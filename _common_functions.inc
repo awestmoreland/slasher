@@ -34,7 +34,11 @@
 
 
 
-  function time_elapsed($secs){
+  function time_elapsed_since($previous){
+
+    $now = time();
+    $secs = $now-$previous;
+
     $bit = array(
         ' year'        => $secs / 31556926 % 12,
         ' week'        => $secs / 604800 % 52,

@@ -11,11 +11,11 @@
 
 if($command == "/sup") {
 
-  if($text != "") {
+  $handle = fopen($status_file, 'r'); // open file for read
+  $team_status = json_decode(fread($handle,filesize($status_file)), true); // read statuses from file
+  fclose($handle); // close file
 
-    $handle = fopen($status_file, 'r'); // open file for read
-    $team_status = json_decode(fread($handle,filesize($status_file)), true); // read statuses from file
-    fclose($handle); // close file
+  if($text != "") {
 
     $arr = explode(' ', trim($text, "@"));
     $team_member = $arr[0];
@@ -24,8 +24,7 @@ if($command == "/sup") {
 
       $last_status = $team_status[$team_member]['status'];
       $last_update = $team_status[$team_member]["timestamp"];
-      $now = time();
-      $time_since_last_update = time_elapsed($now-$last_update);
+      $time_since_last_update = time_elapsed_since($last_update);
 
       // create response
       $response = "Last I heard, @$team_member was $last_status, but that was $time_since_last_update ago.";
@@ -43,7 +42,20 @@ if($command == "/sup") {
   }
   else {
 
-    respond_no_data($response_url);
+    // respond_no_data($response_url);
+
+    // no team member was passed, so return status for all team members
+
+    $all_team_statuses = "";
+    foreach ($team_status as $member => $status_update) {
+      $update      = $status_update['status'];
+      $timestamp   = $status_update['timestamp'];
+      $time_since_last_update = time_elapsed_since($timestamp);
+
+      $all_team_statuses .= "*$member* was $update $time_since_last_update\n";
+    }
+
+    respond($response_url, $all_team_statuses);
 
   }
 
