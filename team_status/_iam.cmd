@@ -9,7 +9,7 @@
 =======================================
 */
 
-include './team_status/team_status.settings';
+include_once './team_status/team_status.settings';
 
 if($command == "/iam") {
 

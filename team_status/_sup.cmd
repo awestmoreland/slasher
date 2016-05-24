@@ -9,6 +9,8 @@
 =======================================
 */
 
+include_once './team_status/team_status.settings';
+
 if($command == "/sup") {
 
   $handle = fopen($status_file, 'r'); // open file for read
