@@ -44,9 +44,9 @@ if($command == "/sup") {
   }
   else {
 
-    // respond_no_data($response_url);
-
     // no team member was passed, so return status for all team members
+
+    sksort($team_status, "timestamp"); // sort statuses by timestamp
 
     $all_team_statuses = "";
     foreach ($team_status as $member => $status_update) {
