@@ -29,7 +29,7 @@ if($command == "/sup") {
       $time_since_last_update = time_elapsed_since($last_update);
 
       // create response
-      $response = "Last I heard, @$team_member was $last_status, but that was $time_since_last_update ago.";
+      $response = "Last I heard, :team_$team_member: @$team_member was $last_status, but that was $time_since_last_update ago.";
 
     }
     else {
@@ -54,7 +54,7 @@ if($command == "/sup") {
       $timestamp   = $status_update['timestamp'];
       $time_since_last_update = time_elapsed_since($timestamp);
 
-      $all_team_statuses .= "*$member* was $update $time_since_last_update\n";
+      $all_team_statuses .= ":team_$member: *$member* was $update $time_since_last_update\n";
     }
 
     respond($response_url, $all_team_statuses);
