@@ -29,8 +29,7 @@ if($command == "/iam") {
 
 
     // respond to Slack
-    // $response = "*Status update:* $user_name is $text";
-    $response = ":team_$user_name: *$user_name* is $text";
+    $response = (user_emoji($user_name))." $user_name is $text";
     respond($response_url, $response, true);
 
   }

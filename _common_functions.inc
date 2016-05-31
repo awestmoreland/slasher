@@ -23,6 +23,11 @@
   } // function respond()
 
 
+  function user_emoji($username) {
+    global $user_emojis, $user_emoji_prefix;
+    return $user_emojis ? ":$user_emoji_prefix$username:" : "";
+  }
+
 
   function respond_no_data($response_url) {
 
