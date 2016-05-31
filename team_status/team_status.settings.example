@@ -3,4 +3,16 @@
   // File containing json array of statuses
   $status_file = './path/to/file';
 
+  /*
+    to output user images with the response, it's assumed that an emoji
+    for each team member has been uploaded that will be output by
+
+    :$user_emoji_prefix$username:
+
+    e.g.
+      :team_john: or :member_jsmith:
+  */
+  $user_emojis = false;
+  $user_emoji_prefix = "team_"; // e.g. :team_john:
+
 ?>
