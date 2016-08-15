@@ -54,7 +54,9 @@ if($command == "/sup") {
       $timestamp   = $status_update['timestamp'];
       $time_since_last_update = time_elapsed_since($timestamp);
 
-      $all_team_statuses .= (user_emoji($member))." *$member* was $update $time_since_last_update\n";
+      if($time_since_last_update != -1) {
+        $all_team_statuses .= (user_emoji($member))." *$member* was $update $time_since_last_update\n";
+      }
     }
 
     respond($response_url, $all_team_statuses);
